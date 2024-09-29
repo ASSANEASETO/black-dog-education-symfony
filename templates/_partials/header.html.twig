@@ -1,0 +1,43 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-2" class="header-inner flx-between">
+	{# <a href="{{ path('app_index') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+		<h2 class="m-0 text-dark">Black Dog Education</h2>
+	</a> #}
+	<!-- Logo Start -->
+			
+		<div class="logo">
+			<a href="{{ path('app_index') }}" class="link">
+				<img src="{{ asset('assets/img/logo/logo-text.png') }}" class="container mt-1 ml-8"  alt="Educateur canin">
+				{# <img src="{{ asset('assets/img/ecriture-noir.png') }}" class="mx-1 d-block"  alt="Educateur canin"> #}
+			</a>
+		</div>
+	<!-- Logo End  -->
+	<button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<div class="navbar-nav ms-auto p-4 p-lg-0">
+			<a href="{{ path('app_index') }}" class="nav-item nav-link active">Accueil</a>
+			<div class="nav-item dropdown">
+				<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">A Propos</a>
+				<div class="dropdown-menu fade-up m-0">
+					<a href="{{ path('app_history') }}" class="dropdown-item">Mon Histoire</a>
+					<a href="{{ path('app_trouble') }}" class="dropdown-item">Les Principaux Troubles</a>
+					<a href="{{ path('app_terms') }}" class="dropdown-item">Mentions Légales</a>
+				</div>
+			</div>
+			<a href="{{ path('app_service')}}" class="nav-item nav-link">Mes Services</a>
+			<a href="{{ path('app_price_list') }}" class="nav-item nav-link">Mes Tarifs</a>
+			<a href="{{ path('app_post') }}" class="nav-item nav-link">Blog</a>
+			<a href="{{ path('app_contact') }}" class="nav-item nav-link">Contact</a>
+		</div>
+		<a href="{{ path('app_appointement') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Prendre Rendez-vous<i class="fa fa-arrow-right ms-3"></i>
+		</a>
+	</div>
+</nav>
+<!-- Navbar End -->
+
+
+{# , {'slug': history.slug, 'id': history.id}) }} #}
+
+					{# <a href="{{ path('app_mon-histoire', {'slug': history.slug}) }}" class="dropdown-item">Mon Histoire</a> #}

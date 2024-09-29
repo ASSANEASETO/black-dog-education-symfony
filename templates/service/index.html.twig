@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'Comment résoudre les problème de mon chien? Educateur canin à Niort' }}
+{% endblock %}
+
+{% block body %}
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-5">
+		<div class="container py-5">
+			<h1 class="display-3 text-white mb-3 animated slideInDown">{{ 'Black Dog Education'|title }}</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_index') }}">{{ 'Accueil' }}</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_appointement') }}">{{ 'Prendre rendez-vous' }}</a>
+					</li>
+					<li class="breadcrumb-item text-white active" aria-current="page">{{ 'Mes services' }}</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+	<!-- Service Start -->
+	<div class="services container-fluid py-5">
+		<div class="container">
+			<div class="section-title text-center">
+				<h1 class="display-5 mb-5">{{ 'Mes services' }}</h1>
+			</div>
+			<div class="row g-4">
+				{% for service in services %}
+					<div class="col-md-6 col-lg-4 ">
+						<div class="service-item">
+							<div class="p-4 text-center">
+							<strong><h4 class="mb-3">{{ service.title }}</h4></strong>
+								<p class="text-decoration-underline lh-lg">{{service.summury}}</p>
+								<p class="lh-lg">{{service.description}}</p>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<!-- Service End -->
+	</div>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'Accueil Education à Niort' }}
+{% endblock %}
+
+{% block body %}
+	<!-- Hero Start -->
+	<div class="container-fluid mb-0 py-5 bg-hero" style="margin-bottom: 90px;">
+		<div class="container py-5">
+			<div class="row justify-content-start">
+				<div class="col-lg-12 text-center text-lg-end">
+					<h1 class="display-2 text-dark">Educateur Comportementaliste Canin</h1>
+					<p class="fs-4 text-light mb-4">Mon expertise sera une aide précieuse pour vous amener à trouver la meilleure solution possible.</p>
+					<div class="pt-2">
+						<a href="{{ path('app_contact') }}" class="btn btn-primary rounded-pill py-md-3 px-md-5 mx-2 mb-2">Me contacter</a>
+						<a href="{{ path('app_appointement') }}" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2 mb-2">Prendre Rendez-vous</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Hero1End -->
+	<div class=" hero1 container-fluid bg-white container-light p-4 mt-0">
+		<div class="container py-2">
+			<div class="logo">
+				<img src="{{ asset('assets/img/logo/logo-white.jpg') }}" class="mx-auto d-block mb-5" alt="Educateur canin 79000">
+			</div>
+			<p class="lead mb-4 fw-bold  text-center">Vous rendre meilleur avec votre chien.</p>
+			<h5 class="mb-4  text-center">Éducateur Comportementaliste Canin</h5>
+			<h5 class="mb-4  text-center">Se situe à Niort et se déplace à 45' aux alentours.</h5>
+		</div>
+	</div>
+
+	<!-- new text -->
+	<div class="bg-dark p-4 mt-0 rounded">
+		<h1 class="mb-2 text-white text-center">Pour quels types de problématiques mes services sont votre solution ?</h1>
+	</div>
+	<div class="row bg-primary p-4  prob-text text-light">
+		<div class="col-lg-6">
+			<div class="p-2">
+				<span class="fas fa-check-circle mb-3 fs-6">
+					MARCHE EN LAISSE</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					PERFECTIONNEMENT</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					ABOIEMENT INTEMPESTIF</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					CHIEN AGRESSIFS</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6 ">
+					GESTION DES EMOTIONS -   PROPRETE</span><br>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="p-2">
+				<span class="fas fa-check-circle  mb-3 fs-6">
+					ORDRES DE BASE</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					CHIENS ANXIEUX</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					DESTRUCTION</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					EDUCATION DU CHIOT</span><br>
+				<span class="fas fa-check-circle mb-3 fs-6">
+					REACTIVITE (congénères, vélo, voiture...)</span>
+			</div>
+		</div>
+	</div>
+	<!-- Contact Start -->
+	<div class="container-fluid bg-light overflow-hidden px-lg-0">
+		<div class="container contact px-lg-0">
+			<div class="row g-0 mx-lg-0">
+				<div class="col-lg-6 contact-text py-5 wow fadeIn">
+					<div class="p-lg-5 ps-lg-0">
+						<div class="section-title text-start">
+							<h5 class="display-6 mb-2">{{ 'Contactez-moi' }}</h5>
+						</div>
+						<p class="mb-2">Je me déplace à 1h aux alentours de Niort
+							<br>
+							PAS DE FRAIS DE DEPLACEMENT
+							<br>Séance d'évaluation = 35€
+						</p>
+						{{form_start(form, {'attr': {'class': 'contact-form__form'}}) }}
+						{% for label, messages in app.flashes %}
+							{% for message in messages %}
+								<div class="alert alert-{{ label }}">
+									{{ message }}
+								</div>
+							{% endfor %}
+						{% endfor %}
+						<div class="row g-3">
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.name, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Nom et Prénom*', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.email, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'E-mail*', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.number, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Numéro de téléphone*', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.subject, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Object', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-floating">
+									{{ form_widget(form.message, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Message', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-12">
+								<p>* Indiquer les champs obligatoires</p>
+								{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-100 py-3'} }) }}
+								{{ form_errors(form.name) }}
+							</div>
+						</div>
+						{{ form_end(form) }}
+					</div>
+				</div>
+				<div class="col-lg-6 pe-lg-0 py-2 d-flex flex-column justify-content-center align-items-center">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/GCKdG3yOPf4?si=K4HxQLA4x5x_tTUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	{# </div> #}
+	<!-- Contact End -->
+{% endblock %}

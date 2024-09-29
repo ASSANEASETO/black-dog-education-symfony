@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'Mentions légales Educateur canin à Niort 79000' }}
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid bg-light py-5">
+		<div class="container py-5">
+			{% for term in terms|sort((a, b) => a.id <=> b.id) %}
+				{% if loop.index == 8 %}
+					<div class="row g-4">
+						<div class="col-lg-6">
+							<div class="mb-4">
+								<h5>Siège social</h5>
+								<p>Nom de l’entreprise:
+									<strong>Black Dog Éducation</strong>
+								</p>
+								<p class="my-4">Représenté par: Antonin BOUCHERIE
+								</p>
+								<p class="my-4">{{ term.title }}</p>
+								<p class="my-4">Entrepreneur Indépendant.
+								</p>
+							</div>
+							<div class="mb-4">
+								<h5>Contact</h5>
+							</div>
+								{% set sentences = term.summury|split('. ') %}
+								<p class="my-4">
+									{% for sentence in sentences|slice(0, 2) %}
+										{{ sentence }}
+										{% if not loop.last %}.
+										{% endif %}
+									{% endfor %}
+								</p>
+							<div class="mb-4">
+								<h5>Représentant légal</h5>
+							</div>
+							<p class="my-4">Inscription au registre du commerce et des sociétés</p>
+							<p class="my-4">{{ term.content }}</p>
+						</div>
+						<div class="col-lg-6" style="min-height: 200px;">
+							<div class="position-relative d-flex justify-content-center align-items-center h-100">
+								{% if term.imageName %}
+									<img class="img-fluid w-50 h-auto" src="{{ vich_uploader_asset(term, 'imageFile') }}" style="object-fit: cover;" alt="Educateur canin 79000">
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+			{% for term in terms|sort((a, b) => a.id <=> b.id) %}
+				{%  if term.id != terms[7].id %}
+					<div class="row g-4">
+						<div class="col-lg-6">
+							<h5 class="my-4 text-center">{{ term.title }}</h5>
+							{% if term.summury %}
+								<p class="my-4 lh-lg">{{ term.summury }}</p>
+							{% endif %}
+							<p class="my-4 lh-lg">{{ term.content }}</p>
+						</div>
+						<div class="col-lg-6" style="min-height: 200px;">
+							<div class="position-relative d-flex justify-content-center align-items-center h-100">
+								{% if term.imageName %}
+									<img class="img-fluid w-50 h-auto" src="{{ vich_uploader_asset(term, 'imageFile') }}" style="object-fit: cover;" alt="Educateur canin 79000">
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

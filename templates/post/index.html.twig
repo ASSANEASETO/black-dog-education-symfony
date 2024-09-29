@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid bg-light py-5">
+		<div class="container py-5">
+			{% for post in posts|sort((a, b) => a.id <=> b.id)%}
+					{%  if post.id != posts[2].id %}
+						<div class="row g-4"> <div class="col-lg-8">
+							<div class="mb-4">
+								<a href="#" class="h1 display-5">{{ post.title }}</a>
+							</div>
+							<div class="position-relative rounded overflow-hidden mb-3">
+								{% if post.imageName %}
+									<img src="{{ vich_uploader_asset(post, 'imageFile') }}" class="img-zoomin img-fluid rounded w-100" alt="Education chien Niort">
+								{% endif %}
+							</div>
+							<p class="my-4 lh-lg">{{ post.summary }}</p>
+							<p class="my-4 lh-lg">{{ post.content }}</p>
+						</div>
+					</div>
+				{% endif %}
+				<!-- Section spéciale pour le troisième post -->
+				{% if loop.index == 3 %}
+					<div class="bg-light p-4 mb-4 rounded border-start border-3 border-primary">
+						<h1 class="mb-2">{{ post.title }}</h1>
+					</div>
+					<div class="row g-4">
+						<div class="col-6">
+							<div class="rounded overflow-hidden">
+								{% if post.imageName %}
+									<img src="{{ vich_uploader_asset(post, 'imageFile') }}" class="img-zoomin img-fluid rounded w-100" alt="Educateur canin Niort, 79000">
+								{% endif %}
+							</div>
+						</div>
+					</div>
+					<p class="my-4 lh-lg">{{ post.summary }}</p>
+					<p class="my-4 lh-lg">{{ post.content }}</p>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+
+{% endblock %}

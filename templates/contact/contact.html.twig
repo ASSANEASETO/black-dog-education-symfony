@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+{{ 'Contact  d\'un éducateur canin à Niort. Rappel gratuit: Evaluation à domicile 35€' }}
+{% endblock %}
+
+{% block body %}
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-5">
+		<div class="container py-5">
+			<h1 class="display-3 text-white mb-3 animated slideInDown">{{ 'Black Dog Education'|title }}</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_index') }}">{{ 'Accueil' }}</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_appointement') }}">{{ 'Prendre rendez-vous' }}</a>
+					</li>
+					<li class="breadcrumb-item text-white active" aria-current="page">{{ 'Contact' }}</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+
+	<!-- Contact Start -->
+	<div class="container-fluid bg-light overflow-hidden px-lg-0">
+		<div class="container contact px-lg-0">
+			<div class="row g-0 mx-lg-0">
+				<div class="col-lg-6 contact-text py-5 wow fadeIn">
+					<div class="p-lg-5 ps-lg-0">
+						<div class="section-title text-start">
+							<h1 class="display-5 mb-4">{{ 'Me contacter' }}</h1>
+						</div>
+						<p class="mb-4">Je me déplace à 45 minutes aux alentours de Niort
+							<br>
+							PAS DE FRAIS DE DEPLACEMENT
+							<br>Séance d'évaluation = 35€
+						</p>
+						{{form_start(form, {'attr': {'class': 'contact-form__form'}}) }}
+						{% for label, messages in app.flashes %}
+    						{% for message in messages %}
+        						<div class="alert alert-{{ label }}">
+           						 	{{ message }}
+        						</div>
+    						{% endfor %}
+						{% endfor %}
+
+						<div class="row g-3">
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.name, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Nom et Prénom*', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.email, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'E-mail*', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.number, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Numéro de téléphone*', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-floating">
+									{{ form_widget(form.subject, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Object', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="form-floating">
+									{{ form_widget(form.message, { 'attr': {'class':'form-control'} }) }}
+									{{ form_label(form.name, 'Message', { 'class': 'form-label' }) }}
+									{{ form_errors(form.name) }}
+								</div>
+							</div>
+							<div class="col-12">
+								<p>* Indiquer les champs obligatoires</p>
+								{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-100 py-3'} }) }}
+								{{ form_errors(form.name) }}
+							</div>
+						</div>
+						{{ form_end(form) }}
+					</div>
+				</div>
+				<div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
+					<div class="position-relative h-100">
+						<iframe class="position-absolute w-100 h-100" style="object-fit: cover;" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d88170.48711227937!2d-0.5498011264576395!3d46.32318745795828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x4807303211d686f5%3A0x405d39260e82ac0!2sNiort!3m2!1d46.3230985!2d-0.4673997!5e0!3m2!1sfr!2sfr!4v1718722397426!5m2!1sfr!2sfr" 
+						frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0">
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Contact End -->
+	{% endblock %}

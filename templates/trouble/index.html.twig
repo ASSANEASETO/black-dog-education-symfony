@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'Trouble du comportement chez les chiens. Educateur canin à Niort' }}
+{% endblock %}
+
+{% block body %}
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-5">
+		<div class="container py-5">
+			<h1 class="display-3 text-white pb-3 animated slideInDown">{{ 'Black Dog Education'|title }}</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_index') }}">{{ 'Accueil' }}</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_contact') }}">{{ 'Me contacter' }}</a>
+					</li>
+					<li class="breadcrumb-item text-white active" aria-current="page">{{ 'Les pricipaux troubles' }}</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+	<div class="container-fluid bg-light">
+		<div class="container py-5">
+			<div class="bg-dark p-5 mb-1 rounded border-start border-5 border-primary">
+				<h1 class="mb-2 text-white text-center">{{ 'Les principaux troubles du comportement' }}</h1>
+			</div>
+		</div>
+		<div class="container py-5">
+			{% for key, trouble in troubles|sort((a, b) => a.id <=> b.id) %}
+			<!-- Section pour les IDs impairs -->
+				{% if trouble.id is odd %}
+					<div class="row g-4">
+						<div class="col-lg-6" style="min-height: 200px;">
+							<div class="position-relative d-flex justify-content-center align-items-center h-100">
+							{% if trouble.imageName %}
+								<img class="img-fluid w-50 h-auto" src="{{ vich_uploader_asset(trouble, 'imageFile') }}" style="object-fit: cover;" alt="Educateur canin 79000">
+							{% endif %}
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<h5 class="my-4 text-center">{{ trouble.title }}</h5>
+							<p class="my-4 lh-lg">
+								{{ trouble.summury }}
+							</p>
+							<p class="my-4 lh-lg">
+								{{ trouble.content }}
+							</p>
+						</div>
+					</div>
+				{% endif %}
+					<!-- Section pour les IDs pairs -->
+				{% if trouble.id is even %}
+					<div class="row g-4">
+						<div class="col-lg-6">
+							<h5 class="my-4 text-center">{{ trouble.title }}</h5>
+							<p class="my-4 lh-lg">
+								{{ trouble.summury }}
+							</p>
+							<p class="my-4 lh-lg">
+								{{ trouble.content }}
+							</p>
+						</div>
+						<div class="col-lg-6" style="min-height: 200px;">
+							<div class="position-relative d-flex justify-content-center align-items-center h-100">
+							{% if trouble.imageName %}
+								<img class="img-fluid w-50 h-auto" src="{{ vich_uploader_asset(trouble, 'imageFile') }}" style="object-fit: cover;" alt="Educateur canin 79000">
+							{% endif %}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="bg-light p-4 pb-4 rounded border-start border-5 border-primary">
+				<h3 class="pb-4">{{ "Pour le chien agressif ou peureux, il ne faut pas vous dire qu'il fait du mal intentionnellement. Ce chien a dû vivre un évènement  traumatisant ou mal comprendre une action et pense bien faire. Mon travail est de lui faire comprendre qu'il se trompe et lui expliquer comment ça fonctionne." }}</h3>
+			</div>
+	</div>
+{% endblock %}

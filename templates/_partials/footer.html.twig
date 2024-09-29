@@ -1,0 +1,62 @@
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+	<div class="container py-5">
+		<div class="row g-5">
+			<div class="col-lg-4 col-md-6">
+				<a href="{{ path('app_index') }}" class="link ">
+					<img src="{{ asset('assets/img/logo/logo.png') }}" class="container col-sm-6"  alt="logo"> 
+					</a>
+				{# <p class="text-light">Vous rendre meilleur avec votre chien.</p>  #}
+				<p class="mb-2">
+					<i class="fa fa-map-marker-alt me-3 pt-2"></i>Niort et alentours jusqu'à 30 km</p>
+				<p class="mb-2">
+					<i class="fa fa-phone-alt me-3"></i>+33 6 66 08 18 75</p>
+				<p class="mb-2">
+					<i class="fa fa-envelope me-3"></i>Lun. - Sam.: 9h - 18h </p>
+				<div class="d-flex pt-2">
+					<a href="https://www.facebook.com/share/Roc4A3yDveaDY9Km/" class="btn btn-outline-light btn-social mx-2">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a class="btn btn-outline-light btn-social mx-2">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+					<a href="mailto:blackdog.educ@gmail.com" class="btn btn-outline-light btn-social">
+						<i class="fas fa-mail-bulk fa"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<h4 class="text-light mb-4">Prestations</h4>
+				<a class="btn btn-link" href="{{ path('app_price_list') }}">Evaluation a domicile</a>
+				<a class="btn btn-link" href="{{ path('app_price_list') }}">Cours Particulier</a>
+				<a class="btn btn-link" href="{{ path('app_price_list') }}">Pack Chiot</a>
+				<a class="btn btn-link" href="{{ path('app_price_list') }}">Pack 3 séances individuelles</a>
+				<a class="btn btn-link" href="{{ path('app_price_list') }}">Pack 5 séances individuelles</a>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<h4 class="text-light mb-4">Quick Links</h4>
+				<a class="btn btn-link" href="{{ path('app_index') }}">Accueil</a>
+				<a class="btn btn-link" href="{{ path('app_service') }}">Services</a>
+				<a class="btn btn-link" href="{{ path('app_post') }}">Blog</a>
+				<a class="btn btn-link" href="{{ path('app_contact') }}">Etre rappelé</a>
+				<a class="btn btn-link" href="{{ path('app_terms') }}">Termes & Conditions</a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="copyright">
+			<div class="row">
+				<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+					&copy;
+					<a class="border-bottom" href="{{ path('app_history') }}">Black Dog Education</a>, All Right Reserved.
+				</div>
+				<div class="col-md-6 text-center text-md-end">
+                	<a class="border-bottom" href="{{ path('app_terms') }}">Conditions Générales de Vente</a>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer End -->
+
+{# , {'slug': history.slug} #}

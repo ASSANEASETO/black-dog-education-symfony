@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ 'Prendre rendez-vous avec un éducateur canin à Niort' }}
+{% endblock %}
+
+{% block body %}
+	<!-- Page Header Start -->
+	<div class="container-fluid page-header py-5">
+		<div class="container py-5">
+			<h1 class="display-3 text-white mb-3 animated slideInDown">{{ 'Black Dog Education'|title }}</h1>
+			<nav aria-label="breadcrumb animated slideInDown">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_index') }}">{{ 'Accueil' }}</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a class="text-white" href="{{ path('app_contact') }}">{{ 'Contact' }}</a>
+					</li>
+					<li class="breadcrumb-item text-white active" aria-current="page">{{ 'Prendre rendez-vous' }}</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+	<!-- Page Header End -->
+	<section
+		class="tm-banner">
+		<!-- .container -->
+		<div class="tm-container-outer tm-banner bg-light py-5">
+			<div class="container col-lg-12">
+				<div class="row tm-banner-row" id="tm-section-search">
+					{{form_start(form, {'attr': {'class': 'contact-form__form'}}) }}
+					{% for label, messages in app.flashes %}
+    						{% for message in messages %}
+        						<div class="alert alert-{{ label }}">
+           						 	{{ message }}
+        						</div>
+    						{% endfor %}
+						{% endfor %}
+					<div class="row col-lg-12">
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.name, 'Envoyez votre demande de rendez-vous', { 'class': 'form-label' }) }}
+							{{ form_widget(form.name, { 'attr': {'class':'form-control',  'placeholder': 'Nom et Prénom*'}}) }}
+						</div>
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.name, 'Services*', { 'class': 'form-label' }) }}
+							<select name="{{ field_name(form.prestations) }}" class="form-control tm-select" id="PriceList">
+								{% for label, value in field_choices(form.prestations) %}
+									<option value="{{ value }}">{{ label }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="row col-lg-12">
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.name, 'Nombre de chien(s)*', { 'class': 'form-label' }) }}
+							<select name="{{ field_name(form.dogNumber) }}" class="form-control tm-select" id="inputChiens">
+								{% for label, value in field_choices(form.dogNumber) %}
+									<option value="{{ value }}">{{ label|trans }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.name, 'Nombre de chiots(s)*', { 'class': 'form-label' }) }}
+							<select name="{{ field_name(form.puppyNumber) }}" class="form-control tm-select" id="inputChiots">
+								{% for label, value in field_choices(form.puppyNumber) %}
+									<option value="{{ value }}">{{ label|trans }}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="row col-lg-12">
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.breed, 'Race(s)' , { 'class': 'form-label' }) }}
+							{{ form_widget(form.breed, { 'attr': {'class':'form-control', 'placeholder': 'Race'}}) }}
+						</div>
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.phoneNumber, 'Numéro de téléphone*' , { 'class': 'form-label' }) }}
+							{{ form_widget(form.phoneNumber, { 'attr': {'class':'form-control', 'placeholder':'Numéro de téléphone'}}) }}
+						</div>
+					</div>
+					<div class="row col-lg-12">
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.name, 'Age' , { 'class': 'form-label' }) }}
+							{{ form_widget(form.age, { 'attr': {'class':'form-control', 'placeholder': "Age"}}) }}
+						</div>
+						<div class="col-lg-6 mb-3">
+							{{ form_label(form.email, 'E-mail*' , { 'class': 'form-label' }) }}
+							{{ form_widget(form.email, { 'attr': {'class':'form-control', 'placeholder':'E-mail'}}) }}
+						</div>
+					</div>
+					<div class="row col-lg-12">
+						<div class="col-lg-6">
+							<div class="date mb-3" id="date" data-target-input="nearest">
+								{{ form_label(form.date, 'Date*', { 'class': 'form-label' }) }}
+								{{ form_widget(form.date, { 'attr': {'class': 'form-control'} }) }}
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="time pb-3" id="Heure*" data-target-input="nearest">
+								{{ form_label(form.time, 'Horaires (Du lun. au sam. entre 9h-18h)', { 'class': 'form-label' }) }}
+								{{ form_widget(form.time, { 'attr': {'class': 'form-control'} }) }}
+							</div>
+						</div>
+						<Nl2br>
+							<br>
+							<div class="d-flex justify-content-center align-items-center">
+								{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-50 py-3'} }) }}
+							</div>
+						</div>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endblock %}
