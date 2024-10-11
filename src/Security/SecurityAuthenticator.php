@@ -20,7 +20,7 @@ class SecurityAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'app_login-bde202479';
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
