@@ -12,6 +12,10 @@ DirectoryIndex index.php
     Options +SymLinksIfOwnerMatch
     RewriteEngine On
 
+    # Redirection HTTP vers HTTPS
+    RewriteCond %{HTTPS} on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     # Détermine automatiquement la base pour le répertoire
     RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
     RewriteRule .* - [E=BASE:%1]
