@@ -46,7 +46,7 @@ class InvitationController extends AbstractController
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('login-bde202479');
+            return $this->redirectToRoute('admin_dashboard_index');
         }
 
         return $this->render('registration/register.html.twig', [

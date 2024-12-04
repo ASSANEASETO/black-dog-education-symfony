@@ -37,7 +37,6 @@ security:
         # Ajoutez cette ligne pour restreindre l'accès à /admin
         - { path: ^/admin_dashboard_index, roles: ROLE_SUPER_ADMIN }
         - { path: ^/admin_dashboard_index, roles: ROLE_ADMIN }
-        - { path: '^/', roles: PUBLIC_ACCESS, requires_channel: https }
         # - { path: ^/profile, roles: ROLE_USER }
     role_hierarchy:
         ROLE_ADMIN:       ROLE_ADMIN
