@@ -84,6 +84,8 @@
 							</div>
 							<div class="col-12">
 								<p>* Indiquer les champs obligatoires</p>
+								<p> En soumettant ce formulaire, j'accepte le traitement de mes données personnelles et qu'elles soient utilisées pour me recontacter. 
+									Mes données seront traitées conformément à la  <a class="link" href="{{ path('app_terms') }}">Déclaration de confidentialité</a></p>
 								{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-100 py-3'} }) }}
 								{{ form_errors(form.name) }}
 							</div>
