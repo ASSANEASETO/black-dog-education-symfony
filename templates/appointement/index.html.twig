@@ -23,8 +23,7 @@
 		</div>
 	</div>
 	<!-- Page Header End -->
-	<section
-		class="tm-banner">
+	<section class="tm-banner">
 		<!-- .container -->
 		<div class="tm-container-outer tm-banner bg-light py-5">
 			<div class="container col-lg-12">
@@ -104,15 +103,16 @@
 						</div>
 						<Nl2br>
 						<p> En soumettant ce formulaire, j'accepte le traitement de mes données personnelles et qu'elles soient utilisées pour me recontacter. 
-							Mes données seront traitées conformément à la  <a class="link" href="{{ path('app_terms') }}">Déclaration de confidentialité</a></p>
-							<br>
-							<div class="d-flex justify-content-center align-items-center">
-								{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-50 py-3'} }) }}
-							</div>
+							Mes données seront traitées conformément à la  <a class="link" href="{{ path('app_terms') }}">Déclaration de confidentialité. </a>
+						</p>
+						<br>
+						<div class="d-flex justify-content-center align-items-center">
+							{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-50 py-3'} }) }}
 						</div>
-						{{ form_end(form) }}
 					</div>
+					{{ form_end(form) }}
 				</div>
 			</div>
-		</section>
-	{% endblock %}
+		</div>
+	</section>
+{% endblock %}
