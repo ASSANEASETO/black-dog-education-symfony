@@ -28,9 +28,6 @@ class HistoryController extends AbstractController
         $form = $this->createForm(HistoryFormType::class, $history);
         $form->handleRequest($request);
 
-        // if ($slug === null) {
-        //     $slug = 'educateur_canin';
-        // }
 
         if ($form->isSubmitted() && $form->isValid()){
              
