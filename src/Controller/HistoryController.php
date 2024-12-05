@@ -56,6 +56,3 @@ class HistoryController extends AbstractController
         ]);
     }
 }
-
-// $activites = ['educateur', 'comportementalist', 'canin', 'niort', '79000'];
-        // educateur/comportementalist/canin/niort/79000
