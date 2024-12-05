@@ -28,7 +28,7 @@
 			</div>
 			<p class="lead mb-4 fw-bold  text-center">Vous rendre meilleur avec votre chien.</p>
 			<h5 class="mb-4  text-center">Éducateur Comportementaliste Canin</h5>
-			<h5 class="mb-4  text-center">Se situe à Niort et se déplace à 45' aux alentours.</h5>
+			<h5 class="mb-4  text-center">Se situe à Niort et se déplace à 1h aux alentours.</h5>
 		</div>
 	</div>
 
@@ -78,7 +78,7 @@
 						<p class="mb-2">Je me déplace à 1h aux alentours de Niort
 							<br>
 							PAS DE FRAIS DE DEPLACEMENT
-							<br>Séance d'évaluation = 35€
+							<br>Séance d'évaluation = 45€
 						</p>
 						{{form_start(form, {'attr': {'class': 'contact-form__form'}}) }}
 						{% for label, messages in app.flashes %}
@@ -127,7 +127,7 @@
 							<div class="col-12">
 								<p>* Indiquer les champs obligatoires</p>
 								<p> En soumettant ce formulaire, j'accepte le traitement de mes données personnelles et qu'elles soient utilisées pour me recontacter. 
-									Mes données seront traitées conformément à la  <a class="link" href="{{ path('app_terms') }}">Déclaration de confidentialité./a></p>
+									Mes données seront traitées conformément à la  <a class="link" href="{{ path('app_terms') }}">Déclaration de confidentialité. </a></p>
 								{{ form_widget(form.save, { 'label': 'Envoyer', 'attr': {'class': 'btn btn-primary w-100 py-3'} }) }}
 								{{ form_errors(form.name) }}
 							</div>
@@ -135,12 +135,11 @@
 						{{ form_end(form) }}
 					</div>
 				</div>
-				<div class="col-lg-6 pe-lg-0 py-2 d-flex flex-column justify-content-center align-items-center">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/GCKdG3yOPf4?si=K4HxQLA4x5x_tTUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<div class="iframe-container col-lg-6 pe-lg-0 py-2 d-flex flex-column justify-content-center align-items-center">
+					<iframe width="420" height="236" src="https://www.youtube.com/embed/GCKdG3yOPf4?si=K4HxQLA4x5x_tTUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
 	</div>
-	{# </div> #}
 	<!-- Contact End -->
 {% endblock %}

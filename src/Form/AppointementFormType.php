@@ -35,11 +35,11 @@ class AppointementFormType extends AbstractType
             ])
             ->add('prestations',  ChoiceType::class,[
                 'choices' => [
-                        'Évaluation à domicile 35€' => 1,
-                        'Cours particulier. 45€' => 2,
-                        'Pack Chiot. 300€' => 3,
-                        'Pack 3 séances individuelles. 115€' => 4,
-                        'Pack 5 séances individuelles. 200€' => 5,
+                        'Évaluation à domicile 45€' => 1,
+                        'Cours particulier. 55€' => 2,
+                        'Pack Chiot. 350€' => 3,
+                        'Pack 3 séances individuelles. 135€' => 4,
+                        'Pack 5 séances individuelles. 235€' => 5,
                         ],
                 'label' => false,
                 'constraints'=> [
